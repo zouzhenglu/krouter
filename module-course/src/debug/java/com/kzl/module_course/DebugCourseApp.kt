@@ -1,15 +1,13 @@
-package com.kzl.router
+package com.kzl.module_course
 
 import android.app.Application
 import com.kzl.krouter.newInstance
 
 
-class MyApp : Application() {
+class DebugCourseApp :Application(){
 
     private val modules = listOf(
-        "com.kzl.module_home.HomeApp".newInstance(),
         "com.kzl.module_topic.TopicApp".newInstance(),
-        "com.kzl.module_login.LoginApp".newInstance(),
         "com.kzl.module_course.CourseApp".newInstance()
     )
 

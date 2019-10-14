@@ -12,26 +12,27 @@ inline fun <reified T : Service> injectService(service: T) {
                 "否则其他module无法获取key，" +
                 "因为module之间没有直接引用，获取不到具体的实现类，也不推荐写死字符串的方式"
     }
-    Router.put(service)
+    ServiceRouter.put(service)
 }
 
 inline fun <reified T : Service> getService(): T {
-    return Router.get<T>() ?: throw NullPointerException("${T::class.java.name} is null")
+    return ServiceRouter.get<T>() ?: throw NullPointerException("${T::class.java.name} is null")
 }
 
 
-object Router {
-
-    val map = mutableMapOf<String, Any>()
+object ServiceRouter {
+    val serviceMap = mutableMapOf<String, Any>()
 
     inline fun <reified T : Service> put(service: T) {
-        map[T::class.java.name] = service
+        serviceMap[T::class.java.name] = service
     }
 
     inline fun <reified T> get(): T? {
-        return when (val value = map[T::class.java.name]) {
+        return when (val value = serviceMap[T::class.java.name]) {
             is T -> value
             else -> null
         }
     }
 }
+
+

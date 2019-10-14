@@ -1,4 +1,8 @@
-apply plugin: 'com.android.application'
+def isMainModule = isRunningApp
+if (isMainModule)
+    apply plugin: 'com.android.application'
+else
+    apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 
@@ -12,9 +16,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 
     defaultConfig {
-        applicationId "com.kzl.router"
+        if (isMainModule)
+            applicationId "com.kzl.router"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -44,9 +52,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(path: ':module-login')
-    implementation project(path: ':module-course')
-    implementation project(path: ':module-topic')
-    implementation project(path: ':module-home')
     implementation project(path: ':krouter')
+    if (isMainModule) {
+        implementation project(path: ':module-login')
+        implementation project(path: ':module-course')
+        implementation project(path: ':module-topic')
+        implementation project(path: ':module-home')
+    }
 }

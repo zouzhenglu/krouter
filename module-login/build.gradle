@@ -1,4 +1,9 @@
-apply plugin: 'com.android.library'
+def isMainModule = isRuningLogin
+if (isMainModule)
+    apply plugin: 'com.android.application'
+else
+    apply plugin: 'com.android.library'
+
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 android {
@@ -7,6 +12,8 @@ android {
 
 
     defaultConfig {
+        if (isMainModule)
+            applicationId "com.kzl.router"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
