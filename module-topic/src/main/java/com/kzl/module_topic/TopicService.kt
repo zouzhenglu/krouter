@@ -4,6 +4,7 @@ import android.content.Context
 import android.widget.Toast
 import com.kzl.krouter.Router
 import com.kzl.krouter.TopicService
+import com.kzl.module_topic.page.TopicFragment
 
 
 object TopicServiceImpl : TopicService {
@@ -15,5 +16,5 @@ object TopicServiceImpl : TopicService {
         Toast.makeText(ctx, "hello topic service", Toast.LENGTH_LONG).show()
     }
 
-
+    override fun topicFragment() = TopicFragment.newInstance()
 }

@@ -12,6 +12,5 @@ class TopicApp : Application() {
         super.onCreate()
         Log.e("APP", "TopicApp onCreate")
         TopicServiceImpl.inject()
-        Router.get<LoginService>()
     }
 }

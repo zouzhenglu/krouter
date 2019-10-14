@@ -1,6 +1,7 @@
 package com.kzl.krouter
 
 import android.content.Context
+import androidx.fragment.app.Fragment
 
 interface Service {
     fun inject()
@@ -18,6 +19,7 @@ interface LoginService : Service {
 }
 
 interface TopicService : Service {
+    fun topicFragment(): Fragment
 
 }
 
