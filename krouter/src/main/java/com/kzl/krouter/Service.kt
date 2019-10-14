@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 
 interface Service {
-    fun init()
     fun sayHello(ctx: Context)
 }
 

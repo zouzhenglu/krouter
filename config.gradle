@@ -1,11 +1,11 @@
 
 
 project.ext {
-    isRunningApp = false
+    isRunningApp = true
     isRuningHome = false
     isRuningLogin = false
     isRuningTopic = false
-    isRuningCourse = true
+    isRuningCourse = false
 
     dependencies = [
     ]

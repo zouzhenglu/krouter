@@ -6,15 +6,11 @@ import android.widget.Toast
 import com.kzl.krouter.HomeService
 import com.kzl.krouter.TopicService
 import com.kzl.krouter.getService
-import com.kzl.krouter.injectService
 import kotlin.LazyThreadSafetyMode.NONE
 
 internal val topicService by lazy(NONE) { getService<TopicService>() }
 
-object HomeServiceImpl : HomeService {
-    override fun init() {
-        injectService<HomeService>(this)
-    }
+internal object HomeServiceImpl : HomeService {
 
     override fun sayHello(ctx: Context) {
         Toast.makeText(ctx, "hello home service", Toast.LENGTH_LONG).show()

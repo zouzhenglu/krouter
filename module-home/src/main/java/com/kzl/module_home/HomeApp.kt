@@ -1,13 +1,13 @@
 package com.kzl.module_home
 
 import android.app.Application
-import android.util.Log
+import com.kzl.krouter.HomeService
+import com.kzl.krouter.injectService
 
 
 class HomeApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        Log.e("APP", "HomeApp onCreate")
-        HomeServiceImpl.init()
+        injectService<HomeService>(HomeServiceImpl)
     }
 }
