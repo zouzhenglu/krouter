@@ -6,7 +6,19 @@
         <activity
             android:name=".page.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="www.zhiyecn.com"
+                    android:pathPrefix="/recipe" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".page.CourseHomeActivity"
             android:label="@string/title_activity_course_home"

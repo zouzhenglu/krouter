@@ -1,5 +1,6 @@
 package com.kzl.module_home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,12 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         findViewById<View>(R.id.button).setOnClickListener {
+            startActivity(
+                Intent.parseUri(
+                    "http://www.zhiyecn.com/recipe/222222",
+                    Intent.URI_ANDROID_APP_SCHEME
+                )
+            )
             topicService.sayHello(this)
         }
         supportFragmentManager.commit {
