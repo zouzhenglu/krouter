@@ -3,11 +3,8 @@
 #### Description
 A simple router for modular and componentization
 
-#### Software Architecture
-Software architecture description
 
-
-##添加新模块流程
+## 添加新模块流程
 
 ### 1、新建模块
 ### 2、在Router中继承Service，定义暴露的函数接口ModuleService
