@@ -16,7 +16,7 @@
                 <data
                     android:scheme="http"
                     android:host="www.zhiyecn.com"
-                    android:pathPrefix="/recipe" />
+                    android:pathPrefix="/details" />
             </intent-filter>
         </activity>
         <activity

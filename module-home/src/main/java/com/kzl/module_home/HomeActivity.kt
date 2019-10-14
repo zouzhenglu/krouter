@@ -15,7 +15,7 @@ class HomeActivity : AppCompatActivity() {
         findViewById<View>(R.id.button).setOnClickListener {
             startActivity(
                 Intent.parseUri(
-                    "http://www.zhiyecn.com/recipe/222222",
+                    "http://www.zhiyecn.com/details/222222",
                     Intent.URI_ANDROID_APP_SCHEME
                 )
             )
