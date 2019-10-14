@@ -11,6 +11,6 @@ class TopicApp : Application() {
     override fun onCreate() {
         super.onCreate()
         Log.e("APP", "TopicApp onCreate")
-        TopicServiceImpl.inject()
+        TopicServiceImpl.init()
     }
 }

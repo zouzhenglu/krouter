@@ -4,6 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.kzl.krouter.*
+import kotlin.LazyThreadSafetyMode.NONE
+
+internal val homeService by lazy(NONE) { getService<HomeService>() }
+internal val loginService by lazy(NONE) { getService<LoginService>() }
+internal val courseService by lazy(NONE) { getService<CourseService>() }
+internal val topicService by lazy(NONE) { getService<TopicService>() }
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,22 +18,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<View>(R.id.home).setOnClickListener {
-            Router.get<HomeService>()?.let {
+            homeService.let {
                 it.sayHello(this)
                 it.toHomeActivity(this)
             }
         }
 
         findViewById<View>(R.id.login).setOnClickListener {
-            Router.get<LoginService>()?.sayHello(this)
+            loginService.sayHello(this)
         }
 
         findViewById<View>(R.id.course).setOnClickListener {
-            Router.get<CourseService>()?.sayHello(this)
+            courseService.sayHello(this)
         }
 
         findViewById<View>(R.id.topic).setOnClickListener {
-            Router.get<TopicService>()?.sayHello(this)
+            topicService.sayHello(this)
         }
     }
 

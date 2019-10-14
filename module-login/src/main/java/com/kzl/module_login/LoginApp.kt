@@ -9,7 +9,7 @@ class LoginApp : Application() {
     override fun onCreate() {
         super.onCreate()
         Log.e("APP", "LoginApp onCreate")
-        LoginServiceImpl.inject()
+        LoginServiceImpl.init()
 
     }
 }

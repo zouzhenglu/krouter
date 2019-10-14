@@ -8,6 +8,6 @@ class CourseApp : Application() {
     override fun onCreate() {
         super.onCreate()
         Log.e("APP", "CourseApp onCreate")
-        CourseServiceImpl.inject()
+        CourseServiceImpl.init()
     }
 }

@@ -4,17 +4,16 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import com.kzl.krouter.HomeService
-import com.kzl.krouter.Router
 import com.kzl.krouter.TopicService
+import com.kzl.krouter.getService
+import com.kzl.krouter.injectService
 import kotlin.LazyThreadSafetyMode.NONE
 
-internal val topicService: TopicService by lazy(NONE) {
-    Router.get<TopicService>() ?: throw NullPointerException("TopicService is null")
-}
+internal val topicService by lazy(NONE) { getService<TopicService>() }
 
 object HomeServiceImpl : HomeService {
-    override fun inject() {
-        Router.put<HomeService>(this)
+    override fun init() {
+        injectService<HomeService>(this)
     }
 
     override fun sayHello(ctx: Context) {

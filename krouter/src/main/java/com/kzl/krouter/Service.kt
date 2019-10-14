@@ -4,11 +4,8 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 
 interface Service {
-    fun inject()
-
+    fun init()
     fun sayHello(ctx: Context)
-
-
 }
 
 interface HomeService : Service {
@@ -20,7 +17,6 @@ interface LoginService : Service {
 
 interface TopicService : Service {
     fun topicFragment(): Fragment
-
 }
 
 interface CourseService : Service {

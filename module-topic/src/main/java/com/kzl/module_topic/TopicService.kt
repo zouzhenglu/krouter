@@ -2,14 +2,14 @@ package com.kzl.module_topic
 
 import android.content.Context
 import android.widget.Toast
-import com.kzl.krouter.Router
 import com.kzl.krouter.TopicService
+import com.kzl.krouter.injectService
 import com.kzl.module_topic.page.TopicFragment
 
 
 object TopicServiceImpl : TopicService {
-    override fun inject() {
-        Router.put<TopicService>(this)
+    override fun init() {
+        injectService<TopicService>(this)
     }
 
     override fun sayHello(ctx: Context) {

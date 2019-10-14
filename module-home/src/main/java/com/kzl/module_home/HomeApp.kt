@@ -8,6 +8,6 @@ class HomeApp : Application() {
     override fun onCreate() {
         super.onCreate()
         Log.e("APP", "HomeApp onCreate")
-        HomeServiceImpl.inject()
+        HomeServiceImpl.init()
     }
 }
