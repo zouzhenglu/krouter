@@ -7,7 +7,7 @@ package com.kzl.krouter
  *  injectService<HomeService>(HomeServiceImpl())
  */
 inline fun <reified T : Service> injectService(service: T) {
-    require(T::class.java.simpleName != service.javaClass.simpleName) {
+    require(T::class.java.name != service.javaClass.name) {
         "面向接口开发，不能直接用实现类来作为key注入到router，" +
                 "否则其他module无法获取key，" +
                 "因为module之间没有直接引用，获取不到具体的实现类，也不推荐写死字符串的方式"
@@ -16,10 +16,12 @@ inline fun <reified T : Service> injectService(service: T) {
 }
 
 inline fun <reified T : Service> getService(): T {
-    return ServiceRouter.get<T>() ?: throw NullPointerException("${T::class.java.name} is null")
+    val service = ServiceRouter.get<T>()
+    require(value = service != null) { "${T::class.java.name} is null" }
+    return service
 }
 
-
+/** 对外不要直接用，使用包装后的扩展函数*/
 object ServiceRouter {
     val serviceMap = mutableMapOf<String, Any>()
 

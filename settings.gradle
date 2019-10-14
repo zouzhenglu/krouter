@@ -1,2 +1,2 @@
 include ':app', ':krouter', ':module-login', ':module-topic', ':module-course', ':module-home', ':common'
-rootProject.name = 'Router'
+rootProject.name = 'KRouter'
