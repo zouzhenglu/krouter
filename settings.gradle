@@ -2,9 +2,6 @@ rootProject.name = 'KRouter'
 
 include ':krouter', ':common'
 
-println(isRuningCourse)
-println(isRunningApp)
-
 if (Boolean.valueOf(isRunningApp)) {
     include ':app',
             ':module-login',
