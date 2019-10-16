@@ -1,12 +1,12 @@
 
-
-project.ext {
-    isRunningApp = true
-    isRuningHome = false
-    isRuningLogin = false
-    isRuningTopic = false
-    isRuningCourse = false
-
-    dependencies = [
-    ]
-}
+//
+//project.ext {
+//    isRunningApp = true
+//    isRuningHome = false
+//    isRuningLogin = false
+//    isRuningTopic = false
+//    isRuningCourse = false
+//
+//    dependencies = [
+//    ]
+//}

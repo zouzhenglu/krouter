@@ -1,4 +1,5 @@
-def isMainModule = isRuningLogin
+boolean isMainModule = Boolean.valueOf(isRuningLogin)
+
 if (isMainModule)
     apply plugin: 'com.android.application'
 else

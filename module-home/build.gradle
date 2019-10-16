@@ -1,4 +1,4 @@
-def isMainModule = isRuningHome
+boolean isMainModule = Boolean.valueOf(isRuningHome)
 if (isMainModule)
     apply plugin: 'com.android.application'
 else
