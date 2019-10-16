@@ -13,6 +13,10 @@ if (Boolean.valueOf(isRunningApp)) {
             ':module-topic',
             ':module-course',
             ':module-home'
+} else if (Boolean.valueOf(isRuningLogin)) {
+    include ':module-login'
+} else if (Boolean.valueOf(isRuningTopic)) {
+    include ':module-topic'
 } else if (Boolean.valueOf(isRuningCourse)) {
     include ':module-topic',
             ':module-course'
